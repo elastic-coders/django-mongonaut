@@ -226,7 +226,7 @@ class DocumentEditFormView(MongonautViewMixin, FormView, MongonautFormViewMixin)
 
     def get_success_url(self):
         self.set_mongonaut_base()
-        return reverse('document_detail_edit_form', kwargs={'app_label': self.app_label, 'document_name': self.document_name, 'id': self.kwargs.get('id')})
+        return reverse('mongonaut:document_detail_edit_form', kwargs={'app_label': self.app_label, 'document_name': self.document_name, 'id': self.kwargs.get('id')})
 
     def get_context_data(self, **kwargs):
         context = super(DocumentEditFormView, self).get_context_data(**kwargs)
@@ -239,7 +239,7 @@ class DocumentEditFormView(MongonautViewMixin, FormView, MongonautFormViewMixin)
         context['document'] = self.document
         context['app_label'] = self.app_label
         context['document_name'] = self.document_name
-        context['form_action'] = reverse('document_detail_edit_form', args=[self.kwargs.get('app_label'),
+        context['form_action'] = reverse('mongonaut:document_detail_edit_form', args=[self.kwargs.get('app_label'),
                                                                             self.kwargs.get('document_name'),
                                                                             self.kwargs.get('id')])
 
@@ -277,7 +277,7 @@ class DocumentAddFormView(MongonautViewMixin, FormView, MongonautFormViewMixin):
 
     def get_success_url(self):
         self.set_mongonaut_base()
-        return reverse('document_detail', kwargs={'app_label': self.app_label, 'document_name': self.document_name, 'id': str(self.new_document.id)})
+        return reverse('mongonaut:document_detail', kwargs={'app_label': self.app_label, 'document_name': self.document_name, 'id': str(self.new_document.id)})
 
     def get_context_data(self, **kwargs):
         """ TODO - possibly inherit this from DocumentEditFormView. This is same thing minus:
@@ -291,7 +291,7 @@ class DocumentAddFormView(MongonautViewMixin, FormView, MongonautFormViewMixin):
 
         context['app_label'] = self.app_label
         context['document_name'] = self.document_name
-        context['form_action'] = reverse('document_detail_add_form', args=[self.kwargs.get('app_label'),
+        context['form_action'] = reverse('mongonaut:document_detail_add_form', args=[self.kwargs.get('app_label'),
                                                                            self.kwargs.get('document_name')])
 
         return context
@@ -320,7 +320,7 @@ class DocumentDeleteView(DeletionMixin, MongonautViewMixin, TemplateView):
     def get_success_url(self):
         self.set_mongonaut_base()
         messages.add_message(self.request, messages.INFO, 'Your document has been deleted.')
-        return reverse('document_list', kwargs={'app_label': self.app_label, 'document_name': self.document_name})
+        return reverse('mongonaut:document_list', kwargs={'app_label': self.app_label, 'document_name': self.document_name})
 
     def get_object(self):
         self.set_mongoadmin()
