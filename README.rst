@@ -3,11 +3,7 @@ django-mongonaut
 ================
 :Info: An introspective interface for Django and MongoDB.
 :Version: 0.2.21
-:Maintainer: Daniel Greenfeld (http://pydanny.com)
-
-.. image:: https://travis-ci.org/pydanny/django-mongonaut.png
-   :alt: Build Status
-   :target: https://travis-ci.org/pydanny/django-mongonaut
+:Maintainer: elastic-coders (http://www.elastic-coders.com)
 
 About
 =====
@@ -16,13 +12,15 @@ django-mongonaut is an introspective interface for working with MongoDB via mong
 
 By writing it from scratch I get to avoid trying to staple ORM functionality on top of MongoDB, a NoSQL key/value binary-tree store.
 
+This project is a fork of pydanny/django-mongonaut (https://github.com/pydanny/django-mongonaut)
+
 Features
 =========
 
 - Automatic introspection of mongoengine documents.
 - Ability to constrain who sees what and can do what.
 - Full control to add, edit, and delete documents
-- More awesome stuff! See http://django-mongonaut.readthedocs.org/en/latest/index.html#features
+- More and more awesome stuff!
 
 Installation
 ============
@@ -84,12 +82,7 @@ django-mongonaut will let you duplicate much of what `django.contrib.admin` give
     # Then attach the mongoadmin to your model
     Post.mongoadmin = MongoAdmin()
 
-* http://django-mongonaut.readthedocs.org/en/latest/api.html
 
-Documentation
-==============
-
-All the documentation for this project is hosted at http://django-mongonaut.rtfd.org.
 
 Dependencies
 ============
@@ -98,7 +91,3 @@ Dependencies
 - pymongo (comes with mongoengine)
 - sphinx (optional - for documentation generation)
 
-Support this project!
-======================
-
-You can hire the lead maintainer to perform dedicated work on this package. Please email pydanny@cartwheelweb.com.
