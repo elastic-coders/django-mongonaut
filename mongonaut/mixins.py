@@ -43,14 +43,20 @@ class MongonautViewMixin(object):
 
     def get_context_data(self, **kwargs):
         context = super(MongonautViewMixin, self).get_context_data(**kwargs)
-        context['MONGONAUT_JQUERY'] = getattr(settings, "MONGONAUT_JQUERY",
-                                      "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
-        context['MONGONAUT_TWITTER_BOOTSTRAP'] = getattr(settings, "MONGONAUT_TWITTER_BOOTSTRAP",
-                                                 "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css")
-        context['MONGONAUT_TWITTER_BOOTSTRAP_ALERT'] = getattr(settings,
-                                                               "MONGONAUT_TWITTER_BOOTSTRAP_ALERT",
-                                                       "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js")
-        context['MONGONAUT_BASEPAGE_HEADER'] = getattr(settings, 'MONGONAUT_BASEPAGE_HEADER', 'mongonaut/includes/header.html')
+        context['MONGONAUT_JQUERY'] = getattr(
+            settings, "MONGONAUT_JQUERY",
+            "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
+        context['MONGONAUT_TWITTER_BOOTSTRAP'] = getattr(
+            settings, "MONGONAUT_TWITTER_BOOTSTRAP",
+            "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css")
+        context['MONGONAUT_TWITTER_BOOTSTRAP_ALERT'] = getattr(
+            settings, "MONGONAUT_TWITTER_BOOTSTRAP_ALERT",
+            "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js")
+        context['MONGONAUT_BASEPAGE_HEADER'] = getattr(
+            settings, 'MONGONAUT_BASEPAGE_HEADER', 
+            'mongonaut/includes/header.html')
+        context['DJANGO_ADMIN_INDEX'] = getattr(
+            settings, 'DJANGO_ADMIN_INDEX', '')
         return context
 
     def get_mongoadmins(self):
